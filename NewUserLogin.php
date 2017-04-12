@@ -33,7 +33,7 @@ table{
 <body>
  <h1>Welcome New User!</h1>
  
- <form style = "text-align: center" enctype="multipart/form-data" action = "http://localhost/InsertUsers.php" method = "post">
+ <form style = "text-align: center" enctype="multipart/form-data" action = "http://hound-dogs.herokuapp.com/InsertUsers.php" method = "post">
  <table width = "200" border = "0">
  <tr>
  	<td> Enter a username:
