@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="aaApp">
 <head>
-<title>Front Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hound Dogs</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="FrontPage.min.css" >
+    <link rel="stylesheet" type="text/css" href="FrontPage.css">
+    
 </head>
 <body>
-  <button onclick="location.href='https://www.google.com/maps/d/u/0/embed?mid=1JNeHAxJrHVih_F7ZhTClm9sN17s'" type="button">
-     View Map </button>
-  <button onclick="location.href='NewUserLogin.php'" type="button">
-     New User Sign-up
-  </button>
+    <header>
+        <hr>
+        <div class="container">
+            <div class="col-lg-10 col-lg-offset-1">
+               
+                <a href="#home"> <img class="pull-left" src="HoundDogs.png" alt="" style="width: 374px; height: 300px; margin-top: -25px"> 
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <nav id="mainNav" class="navbar navbar-custom">
+           
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="page-scroll">
+                            <a href="">Home</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="LoginPage.html">Sign In</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="">Sign Up</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="https://www.google.com/maps/d/u/0/embed?mid=1JNeHAxJrHVih_F7ZhTClm9sN17s">View Map</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
 </body>
 </html>
