@@ -36,5 +36,6 @@ if($Password == $Reppass)
 else 
 {
 	echo "Your passwords do not match, try again";
+	echo "bad test";
 }
 ?>
