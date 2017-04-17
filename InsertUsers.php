@@ -21,6 +21,7 @@ if($Password == $Reppass)
 		if(pg_query($pg_conn, $sql))
 		{
 			echo "You have successfully signed up!";
+			echo "Test";
 			header("Location: FrontPage.html");
 			exit();
 		}
