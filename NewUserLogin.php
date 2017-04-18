@@ -17,47 +17,30 @@ h1{
 	padding: 70px 0;
 	text-align: center;
 }
-form {
-	
-	width:100%;
-	height: 200px;
+div {
+    border-radius: 5px;
+    background-color: none;
+    padding: 20px;
 }
-table{
-	margin:0 auto;
-	z-index: 1;
-	width:0%;
-	height:50px;
-}
+
 </style>
 </head>
 <body>
  <h1>Welcome New User!</h1>
  
- <form style = "text-align: center" enctype="multipart/form-data" action = "http://hound-dogs.herokuapp.com/InsertUsers.php" method = "post">
- <table width = "200" border = "0">
- <tr>
- 	<td> Enter a username:
- 	</td>
- 	<td><input type = "text" name = "username" size = "30">
- 	</td>
- </tr>
- <tr>
- 	<td> Enter a password:
- 	</td>
- 	<td><input type = "text" name = "password" size = "30"> 
- 	</td>
- </tr>
- <tr>
- 	<td> Repeat password:
- 	</td>
- 	<td><input type = "text" name = "reppassword" size = "30"> 
- 	</td>
- </tr>
- <tr>
- 	<td><input type ="submit" value = "Enter">
- 	</td>
- </tr>
- </table>
- </form>
+ <div>
+  <form style = "text-align: center" enctype="multipart/form-data" action = "http://localhost/InsertUsers.php" method = "post">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username" size="30">
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password" size="30">
+  	
+    <label>Repeat Password</label>
+    <input type="password" name="reppassword" placeholder="Password" size="30">
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
  </body>
  </html>
