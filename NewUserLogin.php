@@ -1,4 +1,5 @@
 <html>
+<link href='//fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
 <head>
 <title>New User Sign Up</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -43,11 +44,13 @@ input[type=submit] {
 h1{
     padding: 70px 0;
     text-align: center;
+    font-family: 'Overlock SC';
 }
 div {
     border-radius: 5px;
     background-color: none;
     padding: 20px;
+    font-family: 'Overlock SC';
 }
 body {
 	background-image: url("https://www.ecotourismgc.com/wp-content/uploads/2015/09/background.jpg");
