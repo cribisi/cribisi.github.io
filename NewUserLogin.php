@@ -47,6 +47,8 @@ h1{
     font-family: 'Overlock SC';
 }
 div {
+    width: 50%;
+    margin: auto;
     border-radius: 5px;
     background-color: none;
     padding: 20px;
