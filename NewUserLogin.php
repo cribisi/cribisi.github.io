@@ -49,7 +49,9 @@ div {
     background-color: none;
     padding: 20px;
 }
-
+body {
+	background-image: url("https://www.ecotourismgc.com/wp-content/uploads/2015/09/background.jpg");
+}
 </style>
 </head>
 <body>
