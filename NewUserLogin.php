@@ -56,6 +56,7 @@ div {
     border-radius: 5px;
     background-color: none;
     font-family: 'Overlock SC';
+    color: #006622;
 }
 body {
 	background-image: url("https://www.ecotourismgc.com/wp-content/uploads/2015/09/background.jpg");
