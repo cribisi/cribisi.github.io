@@ -55,7 +55,6 @@ div {
     margin: auto;
     border-radius: 5px;
     background-color: none;
-    padding: 20px;
     font-family: 'Overlock SC';
 }
 body {
