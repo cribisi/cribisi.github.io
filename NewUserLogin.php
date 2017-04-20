@@ -44,9 +44,11 @@ input[type=submit] {
     font-size: 20px;
 }
 h1{
-    padding: 70px 0;
+    padding: 40px;
     text-align: center;
     font-family: 'Overlock SC';
+    font-size: 50px;
+    color: green;
 }
 div {
     width: 50%;
