@@ -12,8 +12,20 @@ if (!pg_con) {
 	echo "Database connection error.";
 	exit;
 }
+public function checkLength($Username,$Password){
+	if ($Username =="" || strLen($Username)<4){
+		echo "Username is not long enough";
+		return false;
+	}
+	else
+		return true;
+}
 $Username = $_REQUEST['username'];
 $Password = $_REQUEST['password'];
+
+if(checkLength($Username, $Password) == false){
+	exit;
+}
 
 $user = pg_query($pg_conn,"SELECT username from users where username = '$Username';");
 $namearr = pg_fetch_array($user);
