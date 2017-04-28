@@ -19,7 +19,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #9d2f1f;
+    color: #7CFC00;
     outline: none;
 }
 h1,
@@ -36,7 +36,7 @@ header {
     text-align: center;
     text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     /*background-image: url('../pics/header.png');*/
-    color: #ede6de;
+    color: #7CFC00; /*light green in hex*/
 }
 
 header img {
@@ -52,14 +52,14 @@ header img {
 
 header hr {
     margin-top: 0;
-    border: 6px solid #9d2f1f;
+    border: 6px solid green; /*#9d2f1f;*/
 }
 .navbar {min-height: 5px;}
 .navbar-collapse {
     padding: 0;
 }
 .navbar-custom {
-    background: black;
+    background: green;
     font-family: din-light;
     text-transform: uppercase;
     font-weight: 700;
@@ -87,23 +87,23 @@ header hr {
 }
 .navbar-custom .navbar-nav li a:hover {
     color: white;
-    background: #DC533C;
+    background: #7CFC00;
     outline: none;
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
     color: white;
-    background: #DC533C;
+    background: #7CFC00;
 }
 .navbar-custom .navbar-nav li.active a {
     color: white;
-    background: #DC533C;
+    background: #7CFC00;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
     color: white;
-    background: #DC533C;
+    background: #7CFC00;
 }
 .navbar-custom .navbar-toggle {
     color: white;
@@ -113,9 +113,9 @@ header hr {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-    background-color: #DC533C;
+    background-color: #7CFC00;
     color: white;
-    border-color: #DC533C;
+    border-color: #7CFC00;
 }
 @media (min-width: 768px) {
     .navbar-nav {
@@ -126,8 +126,8 @@ header hr {
     .nav .open > a,
     .nav .open > a:hover,
     .nav .open > a:focus {
-        background-color: #DC533C;
-        border-color: #DC533C;
+        background-color: #7CFC00;
+        border-color: #7CFC00;
     }
     .navbar-nav li {
         float:none;
@@ -147,7 +147,7 @@ header hr {
     }
     .navbar .drop li {
         display: block;
-        border-bottom: 1px solid #black;
+        border-bottom: 1px solid #7CFC00;
     }
     .navbar .drop li a {
         display: block;
@@ -191,7 +191,7 @@ header hr {
 }
 .section hr{
     margin-top: 0;
-    border: 1px solid #9d2f1f;
+    border: 1px solid #7CFC00;
 }
 .section .question,
 .section .title {
@@ -199,7 +199,7 @@ header hr {
     margin-bottom: 0;
 }
 .section .question {
-    color: #9d2f1f;
+    color: #7CFC00;
     font-weight: bold;
     padding-bottom: 10px;
 }
@@ -213,13 +213,13 @@ header hr {
 }
 .section .info{
     height: 270px;
-    background-color: #ED1C24;
+    background-color: #7CFC00;
     position: relative;
     margin-left: -300vw;
     padding-left: 300vw;
     margin-right: -300vw;
     padding-right: 300vw;
-    color: #ffffff;
+    color: #7CFC00;
 }
 .section .info .title{
     font-family:din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
@@ -252,19 +252,19 @@ header hr {
     margin: 0;
 }
 .section #info {
-    border: 2px solid #ffffff;
+    border: 2px solid #7CFC00;
     margin-bottom: 0;
     margin-top: 15px;
 }
 /*Panel Section*/
 .section .panel-custom{
-    border: 1px solid #ED1C24;
+    border: 1px solid #7CFC00;
 }
 .form-control {
-    border-color: #000;
+    border-color: #7CFC00;
 }
 .form-control:focus {
-    border-color: #9d2f1f;
+    border-color: #7CFC00;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0.6);
 }
 /*Report Form*/
