@@ -68,9 +68,39 @@ div {
 body {
 	background-image: url('https://res.cloudinary.com/hdmzxikqp/image/upload/background_kpbxi3.jpg');
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #53c687;
+    font-family: 'Overlock SC';
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #339961;
+}
 </style>
 </head>
 <body>
+<ul>
+  <li><a href="FrontPageV2.html">Home</a></li>
+  <li><a href="LoginPage.html">Sign In</a></li>
+  <li><a href="NewUserLogin.php">Sign Up</a></li>
+  <li><a href="DogMapViewMapPage.php">View Map</a></li>
+</ul>
+	
  <h1>Welcome New User!</h1>
  
  <div>
