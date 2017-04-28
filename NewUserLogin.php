@@ -50,6 +50,9 @@ input[type=submit] {
     font-family: 'Overlock SC';
     font-size: 20px;
 }
+input[type=submit]:hover{
+    background-color: #339961;
+}
 h1{
     padding: 40px;
     text-align: center;
@@ -75,11 +78,9 @@ ul {
     background-color: #53c687;
     font-family: 'Overlock SC';
 }
-
 li {
     float: left;
 }
-
 li a {
     display: block;
     color: white;
@@ -87,11 +88,9 @@ li a {
     padding: 14px 50px;
     text-decoration: none;
 }
-
 li a:hover {
     background-color: #339961;
 }
-
 .active {
 	background-color: #20603d;
 }
