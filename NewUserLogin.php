@@ -91,13 +91,17 @@ li a {
 li a:hover {
     background-color: #339961;
 }
+
+.active {
+	background-color: #20603d;
+}
 </style>
 </head>
 <body>
 <ul>
   <li><a href="FrontPageV2.html">Home</a></li>
   <li><a href="LoginPage.html">Sign In</a></li>
-  <li><a href="NewUserLogin.php">Sign Up</a></li>
+  <li><a class = "active" href="NewUserLogin.php">Sign Up</a></li>
   <li><a href="DogMapViewMapPage.php">View Map</a></li>
 </ul>
 	
