@@ -1,3 +1,10 @@
+<?php
+require 'Cloudinary.php';
+require 'Uploader.php';
+require 'Api.php';
+require 'settings.php';
+?>
+
 <html>
 <link href='//fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
 <head>
@@ -59,7 +66,7 @@ div {
     color: #006622;
 }
 body {
-	background-image: url("https://www.ecotourismgc.com/wp-content/uploads/2015/09/background.jpg");
+	background-image: url('https://res.cloudinary.com/hdmzxikqp/image/upload/background_kpbxi3.jpg');
 }
 </style>
 </head>
