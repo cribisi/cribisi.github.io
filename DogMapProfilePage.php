@@ -5,14 +5,38 @@
    crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
  crossorigin=""></script>
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script type="text/javascript">  
+function myfunction(){
+    cloudinary.openUploadWidget({ cloud_name: 'hdmzxikqp', upload_preset: 'o4ucwb5g'}, 
+        function(error, result) { console.log(error, result) });}
+</script>
+ <?php
+    require 'Cloudinary.php';
+    require 'Uploader.php';
+    require 'Api.php';
+    require 'settings.php';
+    
+
+?>
+
 
  <style>
-	form{
-	width: 600px;
-	height: 300px;
-	margin: 0 auto 0 auto;
-	padding: 10px 10px;	
-	 }
+button{
+width: 100%;
+    background-color: #53c687;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+}
+form{
+width: 600px;
+height: 300px;
+margin: 0 auto 0 auto;
+padding: 10px 10px;	
+}
   #mapid {
     width: 900px;
     height: 400px;
@@ -73,15 +97,15 @@ input[type=submit] {
 </form>
 </div> 
 <div>
-    <form method="POST" action="DogMapProfilePage.php" enctype="multipart/form-data">
-    <input type="file" name="myimage">
-    <input type="submit" name="submit_image" value="Upload">
-    </form>
+
+    <button onclick="myfunction()">Upload Photo</button>
+
 </div>
      
  </body>
 </html>
 <?php
+
 function pg_connection_string_from_database_url() {
     return "dbname=dff2a27c9i26ki host=ec2-23-23-227-188.compute-1.amazonaws.com port=5432 user=vdlgvifazdpdaj password=1c07055de63f0532e4e4015d9b6b062821708286d27396e7262a40910194394c sslmode=require"; # <- you may want to add sslmode=require there too
 }
@@ -101,30 +125,29 @@ $Longitude = $_REQUEST['longitude'];
 $Latitude = $_REQUEST['latitude'];
 if($Longitude >= -105.3 && $Longitude <= -105.2 && $Latitude <= 40.07 && $Latitude >= 39.96)
 {
+$doginfo = pg_query($pg_conn,"SELECT * from doginformation;");
+while($dbdoginfoarray = pg_fetch_array($doginfo)){
+    $dblatitude =  $dbdoginfoarray['latitude'];
+    $dblongitude = $dbdoginfoarray['longitude'];
+    echo  "<script type = 'text/javascript'>var marker = L.marker([$dblatitude, $dblongitude]); mymap.remove(marker);</script>"; 
+}
+
 
     pg_query($pg_conn,"INSERT INTO doginformation (latitude, longitude) VALUES ($Latitude,$Longitude);");
     echo "You have entered a correct location";
-    echo  "<script type = 'text/javascript'>var = greenIcon = L.icon({
-    iconUrl: 'leaf-green.png',
-    shadowUrl: 'leaf-shadow.png',
-
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] 
-    });
-    L.marker([40.00643, -105.265991],{icon: greenIcon}).addTo(mymap);</script>";
+    $doginfo = pg_query($pg_conn,"SELECT * from doginformation;");
+    while($dbdoginfoarray = pg_fetch_array($doginfo)){
+    	$dblatitude =  $dbdoginfoarray['latitude'];
+    	$dblongitude = $dbdoginfoarray['longitude'];
+    	echo  "<script type = 'text/javascript'> var marker = L.marker([$dblatitude, $dblongitude]).addTo(mymap);</script>"; 
+}
+	
 }
 else 
 {
     echo "You have entered a wrong location";
     
 }
-$imagename = $_FILES["myimage"]["name"];
-$imagetemp = addslashes(file_get_contents($_FILES['myimage']['tmp_name']));
-pg_query($pg_conn,"INSERT INTO doginformation (image) VALUES ('$imagetemp','$imagename');");
-
 
 ?>
 
