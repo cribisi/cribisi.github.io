@@ -53,6 +53,13 @@ input[type=submit] {
 input[type=submit]:hover{
     background-color: #339961;
 }
+label {
+    color: #009933;
+    font-size: 20px;
+    font-family: 'Overlock SC';
+    text-align: center;
+    display: block;
+}
 h1{
     padding: 40px;
     text-align: center;
