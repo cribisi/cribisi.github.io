@@ -46,7 +46,7 @@ input[type=submit] {
     padding: 14px 20px;
     margin: 20px 110px;
     border: none;
-    border-radius: 4px;
+    border-radius: 40px;
     font-family: 'Overlock SC';
     font-size: 20px;
 }
