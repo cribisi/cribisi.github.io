@@ -5,21 +5,37 @@
    crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
  crossorigin=""></script>
+ <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+ <?php
+    require 'Cloudinary.php';
+    require 'Uploader.php';
+    require 'Api.php';
+    require 'settings.php';
+?>
+ <script = type="text/javascript">
+var domelem = document.createElement('a');
+domelem.href = "#point_555_444";
+domelem.innerHTML = "Click me";
+domelem.onclick =  function myfunction(){
+   
+   }
+ </script>
+ 
 
  <style>
-	form{
-	width: 600px;
-	height: 300px;
-	margin: 0 auto 0 auto;
-	padding: 10px 10px;	
-	 }
+    form{
+    width: 600px;
+    height: 300px;
+    margin: 0 auto 0 auto;
+    padding: 10px 10px;
+     }
   #mapid {
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;}
-	 
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -30,7 +46,7 @@ input[type=text], select {
     box-sizing: border-box;
 }
 input[type=password], select {
-	width: 100%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -50,34 +66,28 @@ input[type=submit] {
  </style>
 </head>
  <body>
- <div id="mapid"></div>  
+ <div id="mapid"></div>
   <script>
   var mymap = L.map('mapid').setView([40.006463, -105.265991], 15);
  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibHVzdzYxMjYiLCJhIjoiY2oxbDdxc3BxMDAwcTMybDI2M28wM3VnaiJ9.2Oop3pz_TvNkmyOBvWWA7A', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-		id: 'mapbox.streets'
-	}).addTo(mymap);
-    /*var = greenIcon = L.icon({
-    iconUrl: 'leaf-green.png',
-    shadowUrl: 'leaf-shadow.png',
-
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] 
-    });
-    L.marker([40.00643, -105.265991],{icon: greenIcon}).addto(mymap);*/
-    
-    
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets'
+    }).addTo(mymap);
+    var customOptions = {
+        'maxWidth': '500',
+        'className' : 'custom'
+    }
   </script>
-  
-  <script> var marker = L.marker([40.006463, -105.265991]).addTo(mymap);</script>
-     
-     
+
+  <script> var marker = L.marker([40.006463, -105.265991]).bindPopup(domelem).addTo(mymap);
+
+
+  </script>
+
+
  </body>
 </html>
 <?php
@@ -94,7 +104,8 @@ $doginfo = pg_query($pg_conn,"SELECT * from doginformation;");
 while($dbdoginfoarray = pg_fetch_array($doginfo)){
     $dblatitude =  $dbdoginfoarray['latitude'];
     $dblongitude = $dbdoginfoarray['longitude'];
-    echo  "<script type = 'text/javascript'> var marker = L.marker([$dblatitude, $dblongitude]).addTo(mymap).bindPopup('<strong>$dblatitude</strong><br>Where the GISC was born.').openPopup();</script>";
+
+    echo "<script type = 'text/javascript'> var marker = L.marker([$dblatitude, $dblongitude]).bindPopup(domelem).addTo(mymap)</script>";
 }
 
 
