@@ -16,8 +16,6 @@ function myfunction(){
     require 'Uploader.php';
     require 'Api.php';
     require 'settings.php';
-    
-
 ?>
 
 
