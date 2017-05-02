@@ -45,7 +45,9 @@ else if($Password != $dbupassword || $usernametrue==0){
 }
 else{
 	echo "You've successfully logged in";
-	include 'LoginPage.html';
+	echo '<script type="text/javascript">
+           window.location = "https://hound-dogs.herokuapp.com/DogMapProfilePage.php"
+      </script>';
 }
 pg_close($pg_conn);
 
