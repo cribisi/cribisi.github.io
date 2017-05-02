@@ -1,31 +1,19 @@
 <?php
 // Login Handler for Hound Dogs website
 
-class LoginHandler
-{
+
+
 function pg_connection_string_from_database_url() {
 	return "dbname=dff2a27c9i26ki host=ec2-23-23-227-188.compute-1.amazonaws.com port=5432 user=vdlgvifazdpdaj password=1c07055de63f0532e4e4015d9b6b062821708286d27396e7262a40910194394c sslmode=require"; # <- you may want to add sslmode=require there too
 }
-public	function login($Username,$Password){
+
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 if (!pg_con) {
 	echo "Database connection error.";
 	exit;
 }
-public function checkLength($Username,$Password){
-	if ($Username =="" || strLen($Username)<4){
-		echo "Username is not long enough";
-		return false;
-	}
-	else
-		return true;
-}
 $Username = $_REQUEST['username'];
 $Password = $_REQUEST['password'];
-
-if(checkLength($Username, $Password) == false){
-	exit;
-}
 
 $user = pg_query($pg_conn,"SELECT username from users where username = '$Username';");
 $namearr = pg_fetch_array($user);
@@ -60,9 +48,9 @@ else{
 	include 'LoginPage.html';
 }
 pg_close($pg_conn);
-}
 
 
 
-}
+
+
 ?>
