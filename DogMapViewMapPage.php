@@ -115,12 +115,10 @@ input[type=submit] {
  </style>
 </head>
  <body>
+
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <img src="http://res.cloudinary.com/hdmzxikqp/image/upload/v1493410276/dog5_yd5mpn.jpg" style="margin:auto; width:200px;display:block" />
 </div>
  <div id="mapid"></div>
   <script>
