@@ -1,5 +1,7 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="FrontPage.min.css" >
+    <link rel="stylesheet" type="text/css" href="FrontPage.css">
 <title>Nearby Dogs</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
    crossorigin=""/>
@@ -20,6 +22,7 @@ function myfunction(){
 
 
  <style>
+ body{background-image: url("https://www.ecotourismgc.com/wp-content/uploads/2015/09/background.jpg");}
 button{
 width: 100%;
     background-color: #53c687;
@@ -71,6 +74,30 @@ input[type=submit] {
  </style>
 </head>
  <body>
+
+ <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <nav id="mainNav" class="navbar navbar-custom">
+           
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="page-scroll">
+                            <a href="FrontPage.html">Home</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="LoginPage.html">Sign In</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="NewUserLogin.php">Sign Up</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="DogMapViewMapPage.php">View Map</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
  <div id="mapid"></div>  
   <script>
   var mymap = L.map('mapid').setView([40.006463, -105.265991], 15);
@@ -81,7 +108,11 @@ input[type=submit] {
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.streets'
 	}).addTo(mymap);    
+  var marker = L.marker([40.0042560966,-105.266348689]).addTo(mymap)
+ var marker = L.marker([40.0052853197,-105.268566386]).addTo(mymap)
+var marker = L.marker([40.0059871587,-105.264970129]).addTo(mymap)
   </script>
+  
     
 <div>
  <form action = "DogMapProfilePage.php" method = "post">
@@ -90,6 +121,9 @@ input[type=submit] {
 
     <label>Enter Longitude</label>
     <input type="text" name="longitude" placeholder="Longitude" size="30">
+
+    <label>Enter Dog Name</label>
+    <input type= "text" name = "dogname" placeholder= "dogname" size = "30">
   
     <input type="submit" value="Submit">
 </form>
@@ -121,30 +155,21 @@ while($dbdoginfoarray = pg_fetch_array($doginfo)){
 }
 $Longitude = $_REQUEST['longitude'];
 $Latitude = $_REQUEST['latitude'];
+$Dogname = $_REQUEST['dogname'];
 if($Longitude >= -105.3 && $Longitude <= -105.2 && $Latitude <= 40.07 && $Latitude >= 39.96)
 {
-$doginfo = pg_query($pg_conn,"SELECT * from doginformation;");
-while($dbdoginfoarray = pg_fetch_array($doginfo)){
-    $dblatitude =  $dbdoginfoarray['latitude'];
-    $dblongitude = $dbdoginfoarray['longitude'];
-    echo  "<script type = 'text/javascript'>var marker = L.marker([$dblatitude, $dblongitude]); mymap.remove(marker);</script>"; 
-}
-
-
-    pg_query($pg_conn,"INSERT INTO doginformation (latitude, longitude) VALUES ($Latitude,$Longitude);");
+    pg_query($pg_conn,"INSERT INTO doginformation (breed, latitude, longitude) VALUES ('$Dogname', $Latitude,$Longitude);");
     echo "You have entered a correct location";
     $doginfo = pg_query($pg_conn,"SELECT * from doginformation;");
     while($dbdoginfoarray = pg_fetch_array($doginfo)){
-    	$dblatitude =  $dbdoginfoarray['latitude'];
-    	$dblongitude = $dbdoginfoarray['longitude'];
-    	echo  "<script type = 'text/javascript'> var marker = L.marker([$dblatitude, $dblongitude]).addTo(mymap);</script>"; 
+        $dblatitude =  $dbdoginfoarray['latitude'];
+        $dblongitude = $dbdoginfoarray['longitude'];
+        echo  "<script type = 'text/javascript'> var marker = L.marker([$dblatitude, $dblongitude]).addTo(mymap);</script>"; 
 }
-	
 }
-else 
+if(!($Longitude >= -105.3 && $Longitude <= -105.2 && $Latitude <= 40.07 && $Latitude >= 39.96))
 {
-    echo "You have entered a wrong location";
-    
+    echo "You have entered a wrong location";    
 }
 
 ?>
