@@ -105,25 +105,24 @@ li a:hover {
 </head>
 <body>
 <ul>
-  <li><a href="FrontPageV2.html">Home</a></li>
+  <li><a href="FrontPage.html">Home</a></li>
   <li><a href="LoginPage.html">Sign In</a></li>
   <li><a class = "active" href="NewUserLogin.php">Sign Up</a></li>
   <li><a href="DogMapViewMapPage.php">View Map</a></li>
 </ul>
-	
  <h1>Welcome New User!</h1>
- 
+
  <div>
-  <form style = "text-align: center" enctype="multipart/form-data" action = "http://localhost/InsertUsers.php" method = "post">
+  <form style = "text-align: center" enctype="multipart/form-data" action = "InsertUsers.php" method = "post">
     <label>Username</label>
     <input type="text" name="username" placeholder="Username" size="30">
 
     <label>Password</label>
     <input type="password" name="password" placeholder="Password" size="30">
-  	
+
     <label>Repeat Password</label>
     <input type="password" name="reppassword" placeholder="Password" size="30">
-    
+
     <input type="submit" value="Submit">
   </form>
 </div>
