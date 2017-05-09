@@ -5,4 +5,4 @@
 -This repository is not very organized, it basically just has all our source code files for the website.
 -To run the website go to  https://hound-dogs.herokuapp.com/FrontPage.html
 -To find our test cases for some of our files, look for a commit comment labled for unit testing
--The tests for these files can be run with php unit using instructions in the milestone 5 pdf
+-The tests for these files can be run with php unit using instructions in the TESTING.md File found in the Group 13 Repository
